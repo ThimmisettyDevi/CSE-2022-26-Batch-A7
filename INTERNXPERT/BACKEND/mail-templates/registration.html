@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to {{APP_NAME}}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+        }
+        .content {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 0 0 5px 5px;
+            border: 1px solid #e0e0e0;
+            border-top: none;
+        }
+        .button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        .status {
+            background-color: #e8f4fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #3498db;
+        }
+        .pending-status {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+        }
+        .active-status {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to {{APP_NAME}}!</h1>
+    </div>
+    
+    <div class="content">
+        <h2>Hello {{name}},</h2>
+        
+        <p>Thank you for registering with {{APP_NAME}}! We're excited to have you on board.</p>
+        
+        <div class="status {{accountStatusClass}}">
+            <p><strong>Registration Details:</strong></p>
+            <p>Email: {{email}}</p>
+            <p>Role: {{role}}</p>
+            <p>Account Status: <strong>{{accountStatus}}</strong></p>
+        </div>
+        
+        <div id="pendingMessage">
+            <p>Your account is currently <strong>pending approval</strong> by our admin team. 
+            You will receive another email once your account has been activated.</p>
+            <p>This process usually takes 1-2 business days. Thank you for your patience!</p>
+        </div>
+        
+        <div id="activeMessage" style="display: none;">
+            <p>Your account is now active! You can log in to start using our platform.</p>
+            
+            <div style="text-align: center;">
+                <a href="{{loginUrl}}" class="button">Login to Your Account</a>
+            </div>
+            
+            <p>Once logged in, you can:</p>
+            <ul>
+                <li>Complete your profile</li>
+                <li>Explore available opportunities</li>
+                <li>Access platform features</li>
+            </ul>
+        </div>
+        
+        <p>If you have any questions or need assistance, please don't hesitate to contact our support team.</p>
+        
+        <div class="footer">
+            <p>Best regards,</p>
+            <p><strong>The {{APP_NAME}} Team</strong></p>
+            <p>© {{year}} {{APP_NAME}}. All rights reserved.</p>
+            <p>
+                <a href="mailto:{{supportEmail}}" style="color: #3498db;">{{supportEmail}}</a>
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        // Simple JavaScript to show/hide messages based on status
+        // This will run in email clients that support JavaScript (limited)
+        // For better compatibility, we'll also handle it server-side
+        document.addEventListener('DOMContentLoaded', function() {
+            var status = "{{accountStatus}}";
+            if (status.toLowerCase() === 'active') {
+                document.getElementById('pendingMessage').style.display = 'none';
+                document.getElementById('activeMessage').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

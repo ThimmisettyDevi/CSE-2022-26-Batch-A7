@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Updated</title>
+    <style>
+        /* Same styles as interview-scheduled.html with different header color */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .content {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .details-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #4CAF50;
+            margin: 25px 0;
+        }
+
+        .detail-row {
+            margin-bottom: 12px;
+            display: flex;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            min-width: 150px;
+            color: #555;
+        }
+
+        .detail-value {
+            color: #222;
+        }
+
+        .notice {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-left: 4px solid #2196F3;
+        }
+
+        .notice h3 {
+            color: #1565c0;
+            margin-top: 0;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔄 Interview Updated</h1>
+        </div>
+
+        <div class="content">
+            <div class="logo">
+                <div class="logo-text">{{APP_NAME}}</div>
+            </div>
+
+            <p>Dear <strong>{{studentName}}</strong>,</p>
+
+            <p><strong>{{companyName}}</strong> has updated your interview details for the <strong>{{position}}</strong>
+                position.</p>
+
+            <div class="notice">
+                <h3>📢 Important Update</h3>
+                <p>Please review the updated interview details below. Make sure to note any changes to the schedule.</p>
+            </div>
+
+            <div class="details-card">
+                <h3 style="margin-top: 0; color: #4CAF50;">📋 Updated Interview Details</h3>
+                <div class="detail-row">
+                    <div class="detail-label">Position:</div>
+                    <div class="detail-value">{{position}}</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Date:</div>
+                    <div class="detail-value">{{date}}</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Time:</div>
+                    <div class="detail-value">{{time}} (Duration: {{duration}} minutes)</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Type:</div>
+                    <div class="detail-value">{{interviewType}}</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Location:</div>
+                    <div class="detail-value">{{location}}</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Interviewer:</div>
+                    <div class="detail-value">{{interviewerName}}</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Notes:</div>
+                    <div class="detail-value">{{additionalNotes}}</div>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="{{loginUrl}}" class="button">View Updated Details</a>
+            </div>
+
+            <p style="margin-top: 30px;">If you have any conflicts with the new schedule, please contact the company
+                directly.</p>
+
+            <div class="footer">
+                <p>This is an automated message from {{APP_NAME}}. Please do not reply to this email.</p>
+                <p>Need help? Contact us at <a href="mailto:{{supportEmail}}">{{supportEmail}}</a></p>
+                <p>© {{year}} {{APP_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
